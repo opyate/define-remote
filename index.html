@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>remote</title>
+  <meta name="description" content="remote">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Vollkorn">
+  <style>
+   html {
+       height: 100%; }
+
+   body {
+       min-height: 100%; }
+
+   /**
+    * Reset some basic elements
+    */
+   body, h1, h2, h3, h4, h5, h6,
+   p, blockquote, pre, hr,
+   dl, dd, ol, figure {
+       margin: 0;
+       padding: 0; }
+
+   /**
+    * Basic styling
+    */
+   body {
+       font-family: "Vollkorn", serif;
+       font-size: 26px;
+       line-height: 1.7;
+       font-weight: 300;
+       color: #555;
+       background-color: #fdfdfd;
+       -webkit-text-size-adjust: 100%; }
+
+   /**
+    * Set `margin-bottom` to maintain vertical rhythm
+    */
+   h1, h2, h3, h4, h5, h6,
+   p, blockquote, pre,
+   ol, dl, figure {
+       margin-bottom: 25px; }
+
+   /**
+    * Links
+    */
+   a {
+       color: #555;
+       background-color: #F0FF97;
+       padding: 3px;
+       text-decoration: none; }
+   a:visited {
+       color: #555;
+       background-color: #f7ffca; }
+   a:hover {
+       color: #F0FF97;
+       background-color: #555; }
+
+   .cgsubtitle {
+       padding: 5%;
+       text-align: center;
+       height: 10px;
+   }
+   .cgtitle {
+       background-color: #F0FF97;
+       font-size: 3em;
+       padding: 5%;
+       text-align: center;
+   }
+   .cgtitle img {
+       width: 1.5em; }
+
+   .cgfooter {
+       background-color: #333;
+       padding: 60px 20px;
+       color: #ddd; }
+   .cgfooter a {
+       background-color: rgba(0, 0, 0, 0) !important;
+       color: #555 !important;
+       background-color: #F0FF97 !important; }
+   .cgfooter span {
+       font-size: 22.75px; }
+
+   .cgmain {
+       padding: 30px 10px; }
+
+   blockquote {
+       font-family: monospace;
+       font-size: 2em; }
+
+   @supports (grid-area: auto) {
+       .cgsite {
+           display: grid;
+           /*min-height: 100%;*/
+           grid-template-columns: 1fr;
+           grid-template-rows: 1fr 2fr 3fr 1fr ;
+           grid-template-areas: "subtitle" "title" "main" "footer"; }
+
+       .cgsubtitle {
+           grid-area: subtitle;
+       }
+       .cgtitle {
+           grid-area: title; }
+
+       .cgmain {
+           grid-area: main; }
+
+       .cgfooter {
+           grid-area: footer; } }
+   * {
+       box-sizing: border-box; }
+
+   input, textarea {
+       padding: 9px;
+       border: solid 1px #e8e8e8;
+       outline: 0;
+       font: normal 1.1em/100% Verdana, Tahoma, sans-serif;
+       width: 100%;
+       background: #FFFFFF;
+       -moz-box-sizing: border-box;
+       -webkit-box-sizing: border-box;
+       box-sizing: border-box; }
+
+   textarea {
+       width: 100%;
+       height: 150px;
+       line-height: 150%; }
+
+   input:hover, textarea:hover,
+   input:focus, textarea:focus {
+       border-color: #828282; }
+
+   label {
+       margin-left: 0px;
+       color: #999999; }
+
+   button, input[type="submit"] {
+       width: auto;
+       padding: 9px 15px;
+       background: #ACFF58;
+       border: 0;
+       font-size: 3em;
+       color: #555; }
+
+   button {
+       cursor: pointer;
+       cursor: hand; }
+   select {
+       text-decoration: underline dotted #555;
+
+       font-family: "Vollkorn", serif;
+       font-size: 26px;
+       line-height: 1.7;
+       font-weight: 300;
+       color: #555;
+       background: #F0FF97;
+       -webkit-text-size-adjust: 100%;
+
+       border: none;
+       /*for firefox*/
+       -moz-appearance: none;
+       /*for chrome*/
+       -webkit-appearance:none;
+   }
+
+   /*for IE10*/
+   select::-ms-expand {
+       display: none;
+   }
+   #relative {
+       display: none;
+   }
+  </style>
+    </head>
+
+    <body>
+        <div class="cgsite">
+
+            <h5 class="cgsubtitle">
+                Your definition of remote is
+            </h5>
+            <h1 class="cgtitle">
+                <span id="remote">remote</span>
+            </h1>
+
+            <main class="cgmain">
+
+                ...if they are located
+
+                <select id="location" onchange="redefineRemote();">
+                    <option value="anywhere">anywhere</option>
+                    <option value="local">in my town or city</option>
+                    <option value="state">in my state or province</option>
+                    <option value="country">in my country</option>
+                    <option value="continent">on my continent</option>
+                </select>
+
+                and they are
+
+                <select id="time" onchange="redefineRemote();">
+                    <option value="anytime">in any timezone</option>
+                    <option value="0h">in my timezone</option>
+                    <option value="1h">1 hour</option>
+                    <option value="2h">2 hours</option>
+                    <option value="3h">3 hours</option>
+                    <option value="4h">4 hours</option>
+                    <option value="5h">5 hours</option>
+                    <option value="6h">6 hours</option>
+                    <option value="7h">7 hours</option>
+                    <option value="8h">8 hours</option>
+                    <option value="9h">9 hours</option>
+                    <option value="10h">10 hours</option>
+                    <option value="11h">11 hours</option>
+                    <option value="12h">12 hours</option>
+                </select>
+
+                <select id="relative" onchange="redefineRemote();">
+                    <option value="earlier">earlier than me</option>
+                    <option value="later">later than me</option>
+                    <option value="either">either side of me</option>
+                </select>
+
+            </main>
+
+            <footer class="cgfooter">
+                     Made by <a href="https://opyate.com/">Juan M Uys</a>.
+            </footer>
+        </div>
+
+
+        <script type="text/javascript">
+         function redefineRemote() {
+             var loc = document.getElementById("location");
+             var locVal = loc.options[loc.selectedIndex].value;
+             var newLocation = '';
+             if (locVal !== 'anywhere') {
+                 newLocation = '-' + locVal;
+             }
+
+             var time = document.getElementById("time");
+             var timeVal = time.options[time.selectedIndex].value;
+             var newTime = '';
+             if (timeVal !== 'anytime') {
+                 newTime = '-' + timeVal;
+             }
+
+             var relative = document.getElementById("relative");
+             var relativeVal = relative.options[relative.selectedIndex].value;
+             var newRelative = '-' + relativeVal;
+             if (timeVal === 'anytime' || timeVal === '0h') {
+                 relative.style.display = "none";
+                 newRelative = '';
+             } else {
+                 relative.style.display = "inline-block";
+             }
+
+             var remote = 'remote' + newLocation + newTime + newRelative;
+
+             document.getElementById("remote").innerHTML = remote;
+
+         }
+
+
+
+        </script>
+    </body>
+</html>
